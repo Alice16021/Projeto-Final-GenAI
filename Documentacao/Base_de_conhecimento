@@ -1,55 +1,82 @@
+
+#
+O template pede especificamente descrever os arquivos utilizados, como são carregados e como entram no contexto do agente. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+
+```markdown
 # Base de Conhecimento
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+O FraudGuard utiliza dados mockados armazenados na pasta `data/`. Esses arquivos representam as informações de um cliente fictício e servem como base para o contexto utilizado pelo agente.
 
 | Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+|---------|---------|----------------------|
+| `perfil_investidor.json` | JSON | Fornecer informações do perfil do cliente, como nome, idade, profissão, renda, patrimônio, perfil de investidor e aceitação de risco |
+| `transacoes.csv` | CSV | Armazenar o histórico de transações e informações relacionadas ao risco, incluindo a pontuação `score_risco_ml` |
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+Os dados utilizados não correspondem a informações financeiras reais e foram utilizados exclusivamente para fins acadêmicos e de demonstração.
 
 ---
 
 ## Adaptações nos Dados
 
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
+Para o desenvolvimento do FraudGuard, os dados mockados foram utilizados como base para um cenário de monitoramento de segurança financeira.
 
-[Sua descrição aqui]
+O arquivo `transacoes.csv` é utilizado para disponibilizar o histórico das movimentações e seus respectivos indicadores de risco. O arquivo `perfil_investidor.json` fornece o contexto do cliente necessário para personalizar as respostas do agente.
+
+Não são utilizados dados bancários reais na aplicação.
 
 ---
 
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os arquivos são carregados pela aplicação Python quando o sistema é iniciado.
+
+O arquivo `perfil_investidor.json` é lido utilizando a biblioteca padrão `json`, enquanto o arquivo `transacoes.csv` é carregado utilizando o Pandas.
+
+Depois do carregamento, os dados são organizados em um contexto textual utilizado pelo agente.
 
 ### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Os dados do cliente e o histórico das transações são incorporados ao `SYSTEM_PROMPT` do FraudGuard.
+
+Dessa forma, o modelo recebe as informações do cliente e das transações como contexto antes de responder às perguntas do usuário.
+
+O contexto contém informações como:
+
+- Nome e idade do cliente;
+- Profissão;
+- Renda mensal;
+- Patrimônio total;
+- Perfil de investidor;
+- Aceitação de risco;
+- Histórico de transações;
+- Scores de risco associados às transações.
 
 ---
 
 ## Exemplo de Contexto Montado
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+```text
+PERFIL DO CLIENTE:
 
-```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+Nome: João Silva
+Idade: [idade do arquivo]
+Profissão: [profissão do arquivo]
+Renda Mensal: R$ [valor]
+Patrimônio Total: R$ [valor]
+Perfil de Investidor: [perfil]
+Aceita Risco: [informação do perfil]
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
-```
+HISTÓRICO DE TRANSAÇÕES E RISCOS:
+
+[Dados carregados a partir do transacoes.csv]
+
+Cada transação pode conter informações como:
+- Data;
+- Tipo de transação;
+- Valor;
+- Origem ou características da operação;
+- Score de risco.
