@@ -1,8 +1,4 @@
 
-#
-O template pede especificamente descrever os arquivos utilizados, como são carregados e como entram no contexto do agente. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
-
-```markdown
 # Base de Conhecimento
 
 ## Dados Utilizados
