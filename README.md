@@ -60,7 +60,7 @@ O fluxo principal da aplicação é:
 └──────────────────────┘
 
 
-## 🛠️ Stack tecnológico
+## Stack tecnológico
 
 | Tecnologia | Utilização |
 |---|---|
