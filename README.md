@@ -1,8 +1,8 @@
-# 🛡️ FraudGuard — Monitor de Segurança & Fraudes
+# FraudGuard — Monitor de Segurança & Fraudes
 
 > Assistente inteligente de segurança financeira desenvolvido com IA Generativa para analisar transações, interpretar scores de risco e fornecer orientações de segurança de forma clara e contextualizada.
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 O **FraudGuard** é um protótipo de agente financeiro inteligente criado para auxiliar na análise de segurança de uma conta fictícia.
 
@@ -10,7 +10,7 @@ A aplicação utiliza dados estruturados de um cliente e seu histórico de trans
 
 O projeto foi desenvolvido como parte de um desafio acadêmico de **IA Generativa aplicada ao setor financeiro**, com foco em personalização, segurança e confiabilidade das respostas.
 
-## 🎯 Objetivos
+## Objetivos
 
 - Analisar transações financeiras e seus respectivos indicadores de risco;
 - Facilitar a interpretação de scores de risco por meio de linguagem natural;
@@ -19,7 +19,7 @@ O projeto foi desenvolvido como parte de um desafio acadêmico de **IA Generativ
 - Restringir o agente ao contexto de segurança financeira;
 - Evitar a solicitação ou exposição de informações sensíveis.
 
-## 🧩 Como funciona
+## Como funciona
 
 O fluxo principal da aplicação é:
 
@@ -71,7 +71,7 @@ O fluxo principal da aplicação é:
 | **Google Gemini** | Modelo de IA Generativa utilizado pelo agente |
 | **google-genai** | SDK para integração com a API do Gemini |
 
-## 📂 Estrutura do projeto
+## Estrutura do projeto
 
 
 Projeto-Final-GenAI/
@@ -90,10 +90,10 @@ Projeto-Final-GenAI/
 ├── 📁 src/
 │   └── app.py
 │
-└── 📄 README.md
+└── README.md
 
 
-## 🗃️ Base de conhecimento
+## Base de conhecimento
 
 O agente utiliza dados mockados armazenados localmente na pasta data/.
 
@@ -117,7 +117,7 @@ Entre as informações utilizadas está a coluna **score_risco_ml**, que represe
 
 > Os dados utilizados no projeto são fictícios e foram empregados exclusivamente para fins acadêmicos e de demonstração.
 
-## 🤖 Modelo de IA
+## Modelo de IA
 
 O FraudGuard utiliza a **API do Google Gemini** por meio do SDK google-genai.
 
@@ -129,7 +129,7 @@ gemini-3.7-flash
 
 A integração foi escolhida em substituição ao modelo local utilizado inicialmente com Ollama, reduzindo a necessidade de armazenamento e processamento local e simplificando a arquitetura do protótipo.
 
-## 🧠 System Prompt
+##  System Prompt
 
 O comportamento do agente é definido por um SYSTEM_PROMPT que estabelece:
 
@@ -140,7 +140,7 @@ O comportamento do agente é definido por um SYSTEM_PROMPT que estabelece:
 - A restrição de respostas ao contexto de análise de transações e cibersegurança financeira;
 - A necessidade de utilizar uma comunicação clara, direta e didática.
 
-## 🔐 Segurança e limitações
+## Segurança e limitações
 
 O FraudGuard possui regras explícitas de segurança para reduzir respostas inadequadas ou informações inventadas.
 
@@ -154,7 +154,7 @@ O agente:
 - Utiliza dados fictícios fornecidos pela aplicação;
 - Deve informar quando uma solicitação estiver fora do escopo definido.
 
-## 💬 Exemplo de uso
+## Exemplo de uso
 
 O usuário pode fazer perguntas como:
 
@@ -172,7 +172,7 @@ O usuário pode fazer perguntas como:
 
 O FraudGuard utiliza o contexto disponível para elaborar uma resposta relacionada à segurança financeira.
 
-## 📊 Avaliação
+## Avaliação
 
 A qualidade do agente pode ser avaliada por meio de testes estruturados e feedback de usuários.
 
@@ -182,7 +182,7 @@ As principais métricas consideradas no projeto são:
 - **Segurança:** o agente evita inventar informações ou fornecer dados sensíveis?
 - **Coerência:** a resposta faz sentido para o perfil do cliente e para o contexto financeiro?
 
-## 🚀 Como executar
+## Como executar
 
 ### 1. Instale as dependências
 
@@ -214,7 +214,7 @@ Depois, abra no navegador o endereço informado pelo Streamlit, normalmente:
 http://localhost:8501
 
 
-## 📚 Documentação
+## Documentação
 
 A documentação complementar do projeto está organizada em:
 
@@ -226,9 +226,9 @@ A documentação complementar do projeto está organizada em:
 | 04-metricas.md | Testes e avaliação do agente |
 | 05-pitch.md | Roteiro da apresentação do projeto |
 
-## 👩‍💻 Projeto acadêmico
+## Projeto acadêmico
 
 Projeto desenvolvido para demonstrar a aplicação de **IA Generativa em um cenário de segurança financeira**, utilizando dados mockados, uma interface conversacional e integração com um modelo de linguagem via API.
 
 
-🛡️ **FraudGuard** — Segurança financeira explicada de forma simples e conversacional.
+ **FraudGuard** — Segurança financeira explicada de forma simples e conversacional.
