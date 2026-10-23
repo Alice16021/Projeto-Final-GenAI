@@ -11,7 +11,7 @@ st.set_page_config(
 
 #GEMINI 
 
-GEMINI_API_KEY = "AQ.Ab8RN6LEhLCKhbVZNic2vlPvNvN9QpIljRDUhlHqMpqQmVnGGg"  #user test, not real
+GEMINI_API_KEY = ""  #user test, not real
 
 MODELO_GEMINI = "gemini-3.7-flash"
 
